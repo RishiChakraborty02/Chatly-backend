@@ -18,14 +18,12 @@ app.use("/api/auth", authRouter);
 app.use("/api/friends", friendsRouter);
 app.use("/api/messages", messageRouter);
 
-
-
 const httpServer = createServer(app);
 
-app.get("/", (req,res) => {
-  console.log(req.body)
-  res.send("Welcome to the chat app")
-})
+app.get("/", (req, res) => {
+  console.log(req.body);
+  res.send("Welcome to the chat app");
+});
 
 const io = new Server(httpServer, {
   cors: {
